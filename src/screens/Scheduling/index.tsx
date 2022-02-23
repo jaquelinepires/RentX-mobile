@@ -4,6 +4,7 @@ import { BackButton } from '../../components/BackButton';
 import ArrowSvg from '../../assets/arrow.svg'
 import { StatusBar } from 'react-native'; 
 import { Button } from '../../components/Button';
+import { Calendar } from '../../components/Calendar';
 import {
   Container,
   Header,
@@ -11,6 +12,7 @@ import {
   RentalPeriod,
   DateInfo,
   DateTitle,
+  DateValueContainer,
   DateValue,
   Content,
   Footer,
@@ -41,20 +43,24 @@ export function Scheduling(){
         <RentalPeriod>
           <DateInfo>
             <DateTitle>DE</DateTitle>
-            <DateValue selected={false}>22/02/2022</DateValue>
+            <DateValueContainer>
+            <DateValue >22/02/2022</DateValue>
+            </DateValueContainer>
           </DateInfo>
 
           <ArrowSvg />
 
           <DateInfo>
             <DateTitle>ATÈ</DateTitle>
-            <DateValue selected={false}>22/02/2022</DateValue>
+            <DateValueContainer>
+            <DateValue >22/02/2022</DateValue>
+            </DateValueContainer>
           </DateInfo>
         </RentalPeriod>
      </Header>
 
      <Content>
-
+      <Calendar />
      </Content>
      <Footer>
        <Button title="Confirmar"/>
