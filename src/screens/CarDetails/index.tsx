@@ -69,7 +69,10 @@ export function CarDetails(){
      </Content>
 
      <Footer>
-        <Button title='Confirmar'/>
+        <Button 
+         title='Confirmar'
+         onPress={() => {}}
+         />
      </Footer>
    </Container>
   );
