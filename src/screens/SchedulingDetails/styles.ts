@@ -123,7 +123,7 @@ export const RentalPriceDetails = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-
+  align-items: center;
 `;
 export const RentalPriceQuota = styled.Text`
   font-family: ${({ theme}) => theme.fonts.secondary_500};
