@@ -1,4 +1,6 @@
 import React from 'react'; 
+import { RFValue } from 'react-native-responsive-fontsize';
+import { useTheme } from 'styled-components';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { Accessory } from '../../components/Accessory';
@@ -24,6 +26,7 @@ import {
   Period,
   Price,
   Accessories,
+  Footer,
   RentalPeriod,
   CalendarIcon,
   DateInfo,
@@ -34,14 +37,11 @@ import {
   RentalPriceDetails,
   RentalPriceQuota,
   RentalPriceTotal,
-  Footer
-
-
 } from './styles';
-import { RFValue } from 'react-native-responsive-fontsize';
-import theme from '../../styles/theme';
+
 
 export function SchedulingDetails(){
+  const theme = useTheme()
   return (
    <Container>
      <Header>
@@ -73,33 +73,34 @@ export function SchedulingDetails(){
           <Accessory name="2 pessoas" icon={peopleSvg}/>
        </Accessories>
        <RentalPeriod>
-        <CalendarIcon>
-          <Feather 
+         <CalendarIcon>
+           <Feather
             name="calendar"
             size={RFValue(24)}
             color={theme.colors.shape}
-          />
-        </CalendarIcon> 
-        <DateInfo>
-          <DateTitle>DE</DateTitle>
-          <DateValue>18/06/2021</DateValue>
-        </DateInfo>
-        <Feather 
+           />
+         </CalendarIcon>
+
+         <DateInfo>
+           <DateTitle>DE</DateTitle>
+           <DateValue>15/01/2022</DateValue>
+         </DateInfo>
+         <Feather
             name="chevron-right"
             size={RFValue(10)}
             color={theme.colors.text}
-          />
-
-          <DateInfo>
-          <DateTitle>DE</DateTitle>
-          <DateValue>18/06/2021</DateValue>
-        </DateInfo>
+           />
+           
+            <DateInfo>
+           <DateTitle>DE</DateTitle>
+           <DateValue>15/01/2022</DateValue>
+         </DateInfo>
        </RentalPeriod>
        <RentalPrice>
-         <RentalPriceLabel>total</RentalPriceLabel>
+         <RentalPriceLabel>TOTAL</RentalPriceLabel>
          <RentalPriceDetails>
-           <RentalPriceQuota>R$ 580 3x diárias</RentalPriceQuota>
-           <RentalPriceTotal>R$ 2,900</RentalPriceTotal>
+           <RentalPriceQuota>R$ 580 x3 diárias</RentalPriceQuota>
+           <RentalPriceTotal>R$ 2.900</RentalPriceTotal>
          </RentalPriceDetails>
        </RentalPrice>
      </Content>
