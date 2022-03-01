@@ -45,7 +45,8 @@ export function SchedulingDetails(){
   return (
    <Container>
      <Header>
-       <BackButton onPress={() => {}}
+       <BackButton
+        onPress={() => {}}
        />
      </Header>
      <CarImages>
