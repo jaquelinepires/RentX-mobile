@@ -20,20 +20,10 @@ export function Home(){
   const [loading, setLoading] = useState(true);
   
   const navigation = useNavigation<any>()
-    function handleCarDetails(){
-      navigation.navigate('CarDetails');
+
+    function handleCarDetails(car: CarDTO){
+      navigation.navigate('CarDetails', { car });
     }   
-
-
-  const CarData = {
-    brand: 'Audi',
-    name: 'RS 5 Coupé',
-    rent: {
-      period: 'AO DIA',
-      price: 120,
-    },
-    thumbnail: 'https://production.autoforce.com/uploads/version/profile_image/3188/comprar-tiptronic_87272c1ff1.png'
-  }
 
     useEffect(() => {
       async function fetchCars() {
@@ -71,10 +61,10 @@ export function Home(){
     { loading ? <Load /> : 
     <CarList
       data={cars}
-      keyExtractor={item => item.id}
-      renderItem={({ item }) =>
-      <Car data={item} onPress={handleCarDetails} />
-     }
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => (
+      <Car data={item} onPress={() => handleCarDetails(item)} />
+      )}
     />
   }
    </Container>
