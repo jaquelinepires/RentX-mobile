@@ -10,9 +10,15 @@ import {
   TotalCars,
   CarList
 } from './styles';
-
+import { useNavigation } from '@react-navigation/native';
 
 export function Home(){
+  const navigation = useNavigation<any>()
+    function handleCarDetails(){
+      navigation.navigate('CarDetails');
+    }   
+
+
   const CarData = {
     brand: 'Audi',
     name: 'RS 5 Coupé',
@@ -22,13 +28,14 @@ export function Home(){
     },
     thumbnail: 'https://production.autoforce.com/uploads/version/profile_image/3188/comprar-tiptronic_87272c1ff1.png'
   }
- 
+
+
   return (
    <Container>
      <StatusBar 
         barStyle="light-content"
         backgroundColor="transparent"
-        // translucent 
+        translucent 
      />
     <Header>
       <HeaderContent>
@@ -44,7 +51,9 @@ export function Home(){
     <CarList
       data={[1,2,3,4,5,6,7]}
       keyExtractor={item => String(item)}
-      renderItem={({item}) => <Car data={CarData} />}
+      renderItem={({item}) => <Car 
+      data={CarData} 
+      onPress={handleCarDetails} />}
     />
    </Container>
   );
