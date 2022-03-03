@@ -24,7 +24,7 @@ export function Scheduling(){
 
   const navigation = useNavigation<any>();
   function handleConfirmRental() {
-    navigation.navigate('Scheduling')
+    navigation.navigate('SchedulingDetails')
   }
 
   return (
@@ -69,7 +69,7 @@ export function Scheduling(){
       <Calendar />
      </Content>
      <Footer>
-       <Button title="Confirmar" onPress={handle}/>
+       <Button title="Confirmar" onPress={handleConfirmRental}/>
      </Footer>
    </Container>
   );

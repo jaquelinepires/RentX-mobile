@@ -1,21 +1,21 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Home } from '../screens/Home'
 import { CarDetails } from '../screens/CarDetails'
 import { Scheduling } from '../screens/Scheduling'
 import { SchedulingComplete } from '../screens/SchedulingComplete'
 import { SchedulingDetails } from '../screens/SchedulingDetails'
 
-const Stack = createNativeStackNavigator();
+const { Navigator, Screen } = createNativeStackNavigator();
 
-export function MyStack() {
+export function AppStackRoutes() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="CarDetails"component={CarDetails} />
-      <Stack.Screen name="Scheduling"component={Scheduling}/>
-      <Stack.Screen name="SchedulingComplete" component={SchedulingComplete}/>
-      <Stack.Screen name="SchedulingDetails" component={SchedulingDetails} />
-    </Stack.Navigator>
+    <Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+      <Screen name="Home" component={Home} />
+      <Screen name="CarDetails"component={CarDetails} />
+      <Screen name="Scheduling"component={Scheduling}/>
+      <Screen name="SchedulingComplete" component={SchedulingComplete}/>
+      <Screen name="SchedulingDetails" component={SchedulingDetails} />
+    </Navigator>
   )
 }
