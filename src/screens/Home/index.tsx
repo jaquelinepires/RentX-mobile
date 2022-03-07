@@ -21,9 +21,9 @@ export function Home(){
   
   const navigation = useNavigation<any>()
 
-    function handleCarDetails(car: CarDTO){
-      navigation.navigate('CarDetails', { car });
-    }   
+  function handleCarDetails(car: CarDTO) {
+    navigation.navigate("CarDetails", { car });
+   }  
 
     useEffect(() => {
       async function fetchCars() {

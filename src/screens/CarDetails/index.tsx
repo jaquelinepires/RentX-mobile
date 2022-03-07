@@ -4,12 +4,7 @@ import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { Accessory } from '../../components/Accessory';
 import { Button } from '../../components/Button';
-import speedSvg from '../../assets/speed.svg'
-import accelerationSvg from '../../assets/acceleration.svg'
-import forceSvg from '../../assets/force.svg'
-import gasolineSvg from '../../assets/gasoline.svg'
-import exchangeSvg from '../../assets/exchange.svg'
-import peopleSvg from '../../assets/people.svg'
+import { getAccessoryIcon } from '../../utils/getAccessoryIcon'
 
 import {
   Container,
@@ -51,8 +46,7 @@ export function CarDetails(){
      <BackButton onPress={handleBack} />
      </Header>
      <CarImages>
-        <ImageSlider imageUrl={car.photos}
-        />
+        <ImageSlider imageUrl={car.photos}/>
      </CarImages>
      <Content>
        <Details>
@@ -72,7 +66,7 @@ export function CarDetails(){
             <Accessory 
               key={accessory.type} 
               name={accessory.name}  
-              icon={speedSvg} 
+              icon={getAccessoryIcon(accessory.type)} 
             />
            ))
          }
