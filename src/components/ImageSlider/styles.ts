@@ -9,7 +9,7 @@ export const Container = styled.View`
 `;
 export const ImageIndexes = styled.View`
   flex-direction: row;
-  align-items: flex-end;
+  align-self: flex-end;
 `;
 export const ImageIndex = styled.View<ImageIndexProps>`
   width: 6px;
@@ -17,8 +17,7 @@ export const ImageIndex = styled.View<ImageIndexProps>`
 
   background-color: ${({ theme, active }) =>
   active ? theme.colors.title : theme.colors.shape};
-
-  margin-left: 8px;
+  margin-right: 8px;
   border-radius: 3px;
 `;
 export const CarImageWrapper = styled.View`
