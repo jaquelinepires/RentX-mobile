@@ -63,12 +63,15 @@ export function SchedulingDetails(){
     ...schedulesByCar.data.unavailable_dates,
     ...dates,
     }
-
-    api.put('schedules/${car.id}', { 
+    await api.post('schedules_byuser', { 
+      user_id: 1,
+      car
+    })
+    api.put('schedules_bycars/${car.id}', { 
       id: car.id,
       unavailable_dates
     })
-    .then(response => navigation.navigate('SchedulingComplete'))
+    .then(() => navigation.navigate('SchedulingComplete'))
     .catch(() => Alert.alert('Não foi possivel cpmfirmar o agendamento'))
   }
 
