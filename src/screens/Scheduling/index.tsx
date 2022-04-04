@@ -38,7 +38,7 @@ export function Scheduling(){
   const theme = useTheme(); 
   const navigation = useNavigation<any>();
   const route = useRoute();
-  const { car } = route.params as Params
+  const { car } = route.params as Params;
 
   function handleConfirmRental() {
     if(!rentalPeriod.startFormatted || !rentalPeriod.endFormatted){

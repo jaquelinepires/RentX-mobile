@@ -11,7 +11,7 @@ import {
   Header,
   HeaderContent,
   TotalCars,
-  CarList
+  CarList,
 } from './styles';
 import { useNavigation } from '@react-navigation/native';
 
